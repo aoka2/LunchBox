@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/history.css" />
+<title>LunchBoxChecker</title>
+</head>
+<body>
+	<h1><a href="home.html">LunchBoxChecker</a></h1>
+	<button onclick="location.href='home.html'">ホームへ</button>
+
+
+	<div class="tab_container">
+		<input id="tab1" type="radio" name="tab_item" checked>
+		<label class="tab_item" for="tab1">履歴</label>
+		<input id="tab2" type="radio" name="tab_item">
+		<label class="tab_item" for="tab2">お気に入り</label>
+		<div class="tab_content" id="tab1_content">
+		  <div class="tab_content_description">
+			<p class="c-txtsp">タブ1の内容</p>
+
+			<a href="#popup1" class="btn-green">履歴</a>
+			<section class="popup" id="popup1">
+				<div class="popup__container">
+				  <h2>詳細</h2>
+				  <p class="popup__text">詳細</p>
+				  <!-- 閉じるボタン -->
+				  <a href="#tours" class="popup__close">&times;</a>
+				</div>
+		 	</section>
+
+		  </div>
+		</div>
+		<div class="tab_content" id="tab2_content">
+		  <div class="tab_content_description">
+			
+
+			<a href="#popup2" class="btn-green">唐揚げ</a>
+			<section class="popup" id="popup2">
+				<div class="popup__container">
+						<h2>唐揚げ</h2>
+						<a href="https://www.bing.com/search?q=%E5%94%90%E6%8F%9A%E3%81%92+%E3%83%AC%E3%82%B7%E3%83%94&form=ANNTH1&">作り方</a>
+						<h3>材料</h3>
+					<div class="box">
+						<p>鶏もも肉</p>
+						<p>醤油</p>
+						<p>酒</p>
+						<p>おろししょうが</p>
+						<p>おろしにんにく</p>
+						<p>こしょう</p>
+						<!-- 閉じるボタン -->
+						<a href="#tours" class="popup__close">&times;</a>
+					</div>
+				</div>
+		 	</section>
+
+		  </div>
+		</div>
+	  </div>
+	
+		
+
+	
+</body>
+</html>
+

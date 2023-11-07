@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*全ページ適応*/
+
+body{
+	text-align: center;
+}
+
+/*home.html*/
+.buttonsize{
+    width: 300px; /*幅*/
+    padding: 10px;  /*ボタン内のコンテンツとボタンの境界(枠)との間の余白*/
+    box-sizing: border-box; /*ボーダーとパディングが要素の幅や高さに含まれるようにボックスモデル*/
+    border: 1px solid #68779a;
+    background: #cbe8fa;
+    cursor: pointer;
+}
+
+.option{
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    background: #cbe8fa;
+    cursor: pointer;
+}
+
+
+/*memo.html*/
+.box{
+
+margin: 20px auto 20px auto; /*箱と他の行との幅*/
+
+
+width:200px;
+height:300px;
+ 
+border: solid 3px #000000; /*boxの枠の設定*/
+
+background-color: 白;
+text-decoration: none;
+}
+
+.check{
+	margin: 10px auto 15px auto;
+}
+
+.checkbox{
+	border-bottom: 1px solid #333;
+    padding: 1px; /*バーの幅*/
+}
+
+input:checked~span{
+text-decoration: line-through;  /*打ち消し線の実装*/
+}

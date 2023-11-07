@@ -1,0 +1,26 @@
+{
+    "name": "nifty-mbaas-blank",
+    "version": "4.0.0",
+    "displayName": "NIFTY Cloud mobile backend",
+    "engines": {
+      "node": ">=18.16"
+    },
+    "cordova": {
+        "plugins": {
+            "monaca-plugin-monaca-core": {},
+            "ncmb-push-monaca-plugin": {}
+        }
+    },
+    "dependencies": {
+        "monaca-plugin-monaca-core": "3.3.1",
+        "ncmb-push-monaca-plugin": "3.1.2"
+    },
+    "scripts": {
+        "monaca:preview": "npm run dev",
+        "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081"
+    },
+    "devDependencies": {
+        "browser-sync": "~2.27.7",
+        "cordova": "^12.0.0"
+    }
+}

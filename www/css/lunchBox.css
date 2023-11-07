@@ -1,0 +1,51 @@
+@charset "UTF-8";
+#filter-button{
+    display: flex;
+}
+
+.filter-content-style{
+    display : none;
+}
+
+.filter-content-button{
+    flex: auto;
+}
+
+.favorite-filter{
+    display : none;
+}
+
+.dislike-filter{
+    display : none;
+}
+
+.final-check{
+    display : none;
+}
+
+#lunch-make{
+    display: none;
+}
+.show{
+    display : block;
+}
+
+.farstCooking{
+    position: relative;
+}
+
+.secondCooking{
+    position: absolute;
+    left: 40px;
+}
+.thaadCooking{
+    position:absolute;
+    left:70px;
+}
+
+.cooking-detail{
+    display: none;
+    position:absolute;
+    text-align: center;
+}
+
