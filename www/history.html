@@ -9,7 +9,6 @@
 	<h1><a href="home.html">LunchBoxChecker</a></h1>
 	<button onclick="location.href='home.html'">ホームへ</button>
 
-
 	<div class="tab_container">
 		<input id="tab1" type="radio" name="tab_item" checked>
 		<label class="tab_item" for="tab1">履歴</label>
@@ -19,23 +18,44 @@
 		  <div class="tab_content_description">
 			<p class="c-txtsp">タブ1の内容</p>
 
-			<a href="#popup1" class="btn-green">履歴</a>
+            <a href="#popup1" class="btn-green">日付</a>
 			<section class="popup" id="popup1">
 				<div class="popup__container">
-				  <h2>詳細</h2>
-				  <p class="popup__text">詳細</p>
+                    <h2>詳細</h2>
+                  <p><a href="https://www.bing.com/search?q=%E9%BB%92%E8%B1%86+%E3%83%AC%E3%82%B7%E3%83%94&form=ANNTH1">レシピ</a></p>
+                  <p class="popup__text">材料</p>
+                  <div class="box">
+                  <p>黒豆（乾燥）</p>
+                  <p>水</p>
+                  <p>醤油</p>
+                  <p>砂糖</p>
+                  <p>塩</p>
+                  <p>重曹</p>
+                  <p>サビ釘（鉄玉子などでも）</p>
+                  <p>水飴（なくても良い）</p>
 				  <!-- 閉じるボタン -->
 				  <a href="#tours" class="popup__close">&times;</a>
 				</div>
 		 	</section>
 
+             <div class="items">
+					<div class="item">
+						<input type="checkbox" class="checkbox" onchange="toggleDeleteButton()" /><a>黒豆</a>
+				    </div>
+					<button id="deleteButton" onclick="deleteCheckedItems()" disabled>選択した項目を削除</button>
+			    </div>
 		  </div>
 		</div>
+
 		<div class="tab_content" id="tab2_content">
 		  <div class="tab_content_description">
-			
-
-			<a href="#popup2" class="btn-green">唐揚げ</a>
+			<div class="items">
+					<div class="item">
+						<input type="checkbox" class="checkbox" onchange="toggleDeleteButton()" />
+                        <a href="#popup2" class="btn-green">唐揚げ</a>
+					</div>
+					<button id="deleteButton" onclick="deleteCheckedItems()" disabled>選択した項目を削除</button>
+			</div>
 			<section class="popup" id="popup2">
 				<div class="popup__container">
 						<h2>唐揚げ</h2>
@@ -53,14 +73,39 @@
 					</div>
 				</div>
 		 	</section>
-
 		  </div>
 		</div>
 	  </div>
-	
-		
-
-	
 </body>
 </html>
 
+<script>		
+        // チェックボタンが変更されたときに削除ボタンを有効化/無効化する関数
+        function toggleDeleteButton() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const deleteButton = document.getElementById('deleteButton');
+            let anyChecked = false;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    anyChecked = true;
+                }
+            });
+
+            deleteButton.disabled = !anyChecked;
+        }
+
+        // チェックされた項目を削除する関数
+		function deleteCheckedItems() {
+			if (window.confirm('本当に削除しますか？')) {
+            const items = document.querySelectorAll('.item');
+
+            items.forEach(item => {
+                const checkbox = item.querySelector('.checkbox');
+                if (checkbox.checked) {
+                    item.remove();
+                }
+            });
+		}
+        }
+</script>
