@@ -1,112 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="css/history.css" />
+<script src="js/ncmb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <title>LunchBoxChecker</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <script src="favorite.js"></script>
-	<h1><a href="home.html">LunchBoxChecker</a></h1>
-	<button onclick="location.href='home.html'">ホームへ</button>
+	<!-- ヘッダー -->
+	<header class="header">
+        <a href="index.html"><img src="images/homeicon.png" class = "homeicon"></a>
+    </header>
 
 	<div class="tab_container">
-		<input id="tab1" type="radio" name="tab_item">
+
+		<input id="tab1" type="radio" name="tab_item" >
+        <!-- checkedでデフォルトで開くページを指定-->
 		<label class="tab_item" for="tab1">履歴</label>
+
 		<input id="tab2" type="radio" name="tab_item" checked>
 		<label class="tab_item" for="tab2">お気に入り</label>
+
 		<div class="tab_content" id="tab1_content">
+
 		  <div class="tab_content_description">
-			<p class="c-txtsp">タブ1の内容</p>
+			
 
-            <a href="#popup1" class="btn-green">日付</a>
-			<section class="popup" id="popup1">
-				<div class="popup__container">
-                    <h2>詳細</h2>
-                  <p><a href="https://www.bing.com/search?q=%E9%BB%92%E8%B1%86+%E3%83%AC%E3%82%B7%E3%83%94&form=ANNTH1">レシピ</a></p>
-                  <p class="popup__text">材料</p>
-                  <div class="box">
-                  <p>黒豆（乾燥）</p>
-                  <p>水</p>
-                  <p>醤油</p>
-                  <p>砂糖</p>
-                  <p>塩</p>
-                  <p>重曹</p>
-                  <p>サビ釘（鉄玉子などでも）</p>
-                  <p>水飴（なくても良い）</p>
-				  <!-- 閉じるボタン -->
-				  <a href="#tours" class="popup__close">&times;</a>
-				</div>
-		 	</section>
+        <div class="box6">
 
-             <div class="items">
-					<div class="item">
-						<input type="checkbox" class="checkbox" onchange="toggleDeleteButton()" /><a>黒豆</a>
-				    </div>
-					<button id="deleteButton" onclick="deleteCheckedItems()" disabled>選択した項目を削除</button>
-			    </div>
-		  </div>
-		</div>
+        <p id="text1"></p>
 
+    <!--<script src="js/history.js"></script> 変更-->
+
+
+              <!-- 結果を表示するための要素 -->
+                <div id="output"></div>
+                <!-- JavaScriptファイルの読み込み -->
+                <!--<script src="js/history.js"></script>　変更-->
+
+          
+        </div>
+      </div>
+            
+    </div>
+    
+       
+
+	  <!-- <<=tab1.Fin --> 
+
+
+            <!--お気に入り-->
 		<div class="tab_content" id="tab2_content">
-		  <div class="tab_content_description">
-			<div class="items">
-					<div class="item">
-						<input type="checkbox" class="checkbox" onchange="toggleDeleteButton()" />
-                        <a href="#popup2" class="btn-green" id="favorite1">唐揚げ</a>
-					</div>
-					<button id="deleteButton" onclick="deleteCheckedItems()" disabled>選択した項目を削除</button>
-			</div>
-			<section class="popup" id="popup2">
-				<div class="popup__container">
-						<h2>唐揚げ</h2>
-						<a href="https://www.bing.com/search?q=%E5%94%90%E6%8F%9A%E3%81%92+%E3%83%AC%E3%82%B7%E3%83%94&form=ANNTH1&">作り方</a>
-						<h3>材料</h3>
-					<div class="box">
-						<p>鶏もも肉</p>
-						<p>醤油</p>
-						<p>酒</p>
-						<p>おろししょうが</p>
-						<p>おろしにんにく</p>
-						<p>こしょう</p>
-						<!-- 閉じるボタン -->
-						<a href="#tours" class="popup__close">&times;</a>
-					</div>
-				</div>
-		 	</section>
-		  </div>
+            
+			<div class="base" id ="base">
+                
+               <p id="favoriteFood"></p>
+		    </div>
+                <p id="base"></p>
+
+				<button id="myButton" class="toggle-button"><img src="images/dust.png" width="50" height="50" class="button-image"></button>
+		<button id="cancelButton" class="cancel" onclick="cancel()">キャンセル</button>
 		</div>
-	  </div>
+			
+        </div>
+    
+<div style="margin:33% 0 0 0">
+    <footer class="footer">
+            <img class = "footer_image" src="images/footerimage1.png">
+    </footer>
+</div>
 </body>
 </html>
-
-<script>		
-        // チェックボタンが変更されたときに削除ボタンを有効化/無効化する関数
-        function toggleDeleteButton() {
-            const checkboxes = document.querySelectorAll('.checkbox');
-            const deleteButton = document.getElementById('deleteButton');
-            let anyChecked = false;
-
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    anyChecked = true;
-                }
-            });
-
-            deleteButton.disabled = !anyChecked;
-        }
-
-        // チェックされた項目を削除する関数
-		function deleteCheckedItems() {
-			if (window.confirm('本当に削除しますか？')) {
-            const items = document.querySelectorAll('.item');
-
-            items.forEach(item => {
-                const checkbox = item.querySelector('.checkbox');
-                if (checkbox.checked) {
-                    item.remove();
-                }
-            });
-		}
-        }
-</script>
+<script src="js/history.js"></script>
+<script src="js/modal.js"></script>

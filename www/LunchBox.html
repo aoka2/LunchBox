@@ -16,108 +16,95 @@
 	<title>LunchBox</title>
 </head>
 <body>
-	<button onclick="location.href='home.html'">ホームへ</button>
+    <header class="header">
+        <a href="index.html"><img src="images/homeicon.png" class = "homeicon"></a>
+    </header>
 	<div id="filter">
-
-	<p>フィルター</p>
+   
+	<h1>お弁当の登録</h1>
+     <div style="margin:0px 0px 0px 30px;">
+    <p>冷凍食品の混入:
+    <form name="reitoForm">
+        <filedset class="usRadio">
+            <label for="yes">
+            <input type="radio" value="true" id="yes" name="usRadio" checked="checked">はい
+            </label>
+            <label for="no">
+            <input type="radio" value="false" id="no" name="usRadio">いいえ
+            </label>
+        </filedset>
+    </form>
+    </p>
+    </div>
+    <br>
 	<div class="allergy-filter">
-		<button onclick="pulldownOpen()" id="filter-button">アレルギー🔽</button>
-		<div id="filter-content" class="filter-content-style">
+		<button id="filter-button" class="select_a"    onclick="pulldownOpen()">アレルギー選択&ensp;▼</button>
+		<div id="filter-content">
+            <fieldset class="checkbox-2 filter-content-style">
+            </fieldset>
 		</div>
 	</div>
-
-	<div class="favorite-filter">
-	</div>
-	<div class="dislike-filter">
-	</div>
-
-	<br>
-
-	<input type="button" value="確認" onclick="filterHyde()">
+    <br>
+    <div class="material-filter">
+		<button id="material-button" class="select_i"   onclick="pulldownOpenMaterial()">食材選択&ensp;▼</button>
+		<div id="material-content">
+            <fieldset class="checkbox-2 material-content-style">
+            </fieldset>
+        </div>
+	</div><br>
+   
+	    <input type="button"  class="action" value="確認" onclick="filterHyde()">
 	</div>
 	<div class="final-check">
-		<p>Are you sure??</p>
-		<input type="button" value="はい" onclick="lunchMake()">
-		<input type="button" value="いいえ" onclick="filterToBack()">
+		<h1>このままフィルタを<br>適用しますか？</h1>
+        <div class="yseNo">
+		<input class="button-2" type="button" value="はい" onclick="lunchMake()">
+		<input class="button-2" type="button" value="いいえ" onclick="filterToBack()">
+        </div>
 	</div>
 
 	<div id="lunch-make">
-		<img src="images/bento1.png" class="farstCooking" style="max-width : 50%" onclick="cookingResip()">
-		<img src="images/bento1.png" class="secondCooking" style="max-width : 50%" onclick="cookingResip()">
-		<img src="images/bento1.png" class="thaadCooking" style="max-width : 50%" onclick="cookingResip()">
+        <div class="lunchDisplay">
+        <div class="air" style=""></div>
+        <img id="emplty1" class="farstCooking" name="farstCooking" onclick="repickFirst()">
+		<img id="emplty2" class="secondCooking" name="secondCooking" onclick="repickSecond()">
+        <br>
+        <div style="margin: -32px 0 0 0;">
+		<img id="emplty3" class="thaardCooking" name="thaardCooking" onclick="repickThaad()">
+        <img id="emplty4" class="forceCooking" name="forceCooking" onclick="repickForce()">
+        </div>
+        </div>
+        <img class="box" src="images/Box.png">
 		<br>
-		<input type="button" value="確定" onclick="checkLunch()">
+        <div class="makeButtonDiv">
+		<input type="button" class="makeButton button-2" value="確定" onclick="lustBoxCheck()">
+        </div>
+	</div>
 
 		<div class="cooking-detail">
-			
+            <h2>既存物選択</h2>
+            <div class="materialName">
+            </div>
+            <div style="margin:2vh 0 0 0"></div>
+			<input class="button-2" type="button" value="確定" onclick="checkLunch()">
+		    <input class="button-2" type="button" value="戻る" onclick="makeToBack()">
 		</div>
-	</div>
-	<script src="js/lunchBox.js"></script>
+        <div class="success">
+            <h1>Success!!</h1>
+            <p>メモ帳に素材の書き足しがされました。</p>
+        <input class="button-2" type="button" onclick="location.href='memo.html'" value="OK!">
+        </div>
+    <div class="footer-area">
+        <footer class="footer">
+     <!-- <div class = "format_1"> -->
+				<a href="favorite.html"><img src="images/okini_green.png" class = "img_1"></a>
+				<a href="history.html"><img src="images/rireki_green.png" class = "img_3"></a>
+				<a href="memo.html"><img src="images/memo_green.png" class = "img_4"></a>
+            </div>
+		<!-- </div> -->
+</footer>
+    </div>
 </body>
 
 </html>
-
-<script>
-
-    //プルダウンオープン
-let clickNumber = 0;
-function pulldownOpen(){
-    $("#filter-content").toggleClass("show");
-    let element = $(".filter-content-style");
-
-        //データベースAPIキー
-    var applicationKey = "5b860744c00c138eecdcd0c0cd388247850c31abeac7efbd8e259ae1c14c0450";
-    var clientKey = "c071bad9b72a08d21b4aa7b51686065a2d85c0fe4f7b458b201be32bea8bdb81";
-    var ncmb = new NCMB(applicationKey,clientKey);
-    
-    if(clickNumber < 1){
-        //DB取り出し
-        var allergyFoods = ncmb.DataStore("allergy");
-        allergyFoods.fetchAll().then(function(objects){
-            //データ取得成功時
-            for(let i = 0;i < objects.length;i++){
-                var object = objects[i];
-                const name = object.foodName;
-                element.append(`<input type="checkbox" class="filter-content-button">${name}`);
-                element.append("<br>");
-            }
-        }).catch(function(error){
-            //取得失敗
-            alert("error: " + error.code);
-        });
-    }
-    clickNumber++;
-
-}
-//プルダウンクローズ
-function pulldownClose(){
-    
-}
-
-function filterHyde(){
-    $('.final-check').css('display','block');
-    $('#filter').css('display','none');
-}
-
-function lunchMake(){
-    $('.final-check').css('display','none');
-    $('#lunch-make').css('display','block');
-}
-
-function filterToBack(){
-    $('.final-check').css('display','none');
-    $('#filter').css('display','block');
-}
-
-function cookingResip(){
-    $('.cooking-detail').css('display','block');
-    let detailText = $(".cooking-detail");
-    detailText.append("<p>あいうえお！</p>");
-
-}
-
-function checkLunch(){
-    alert("かくてい！");
-}
-
-</script>
+<script src="js/lunchBox.js"></script>

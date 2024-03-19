@@ -1,0 +1,424 @@
+/* This is a CSS file */
+
+@charset "UTF-8";
+
+body{
+    margin: 0px;
+}
+
+.title_logo{
+    text-decoration: none;/*titleの下線消去*/
+}
+
+h1{
+    margin: 35px 0px 23px 35px;
+}
+
+#filter-button{
+    display: flex;
+}
+
+#material-button{
+    display: flex;
+    justify-content: space-around;
+}
+
+body{
+margin : 0px;
+width : 100%;
+height: 100%;
+
+overflow-y: scroll;  
+z-index: 99;
+top:0;
+-webkit-overflow-scrolling: touch; 
+}
+
+.header{
+    padding: 0.5rem 0.5rem;
+    background: #65af42;    
+}
+
+.filter-content-style{
+    margin-bottom: 20px;;
+    display : none;
+}
+.material-content-style{
+    display : none;
+}
+
+.filter-content-button{
+    flex: auto;
+}
+
+.material-content-button{
+    flex: auto;
+}
+
+.favorite-filter{
+    display : none;
+}
+
+.dislike-filter{
+    display : none;
+}
+
+.final-check{
+    display : none;
+}
+
+#lunch-make{
+    display: none;
+}
+
+
+.cooking-detail{
+    display : none;
+}
+
+.success{
+    display: none;
+}
+
+
+/*スタイル*/
+/*お弁当スタイル*/
+#lunch-make{
+    margin: 10vh 0 0 0;
+}
+.lunchDisplay{
+    display: block;
+    margin: 0 0 0 23vh;
+    height: 18vh;
+}
+.farstCooking{
+    max-width: 11vh;
+    margin: -1vh -2vh 1vh -2vh;
+}
+.secondCooking{
+    max-width: 11vh;
+}
+.thaardCooking{
+    max-width: 12vh;
+    margin: 0vh -2vh 0px -2vh;
+}
+.forceCooking{
+    max-width: 11vh;
+    margin: 0px 0px 1.5vh 0px;
+}
+
+.makeButton{
+    display: block;
+}
+.makeButtonDiv{
+    margin: 6vh auto;
+}
+
+.box{
+    max-width: 45vh;
+    margin: -19vh 0 0 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.img_1{
+    width: 18%;
+    height: 18%;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+/* 履歴 */
+.img_3{
+    margin-left: 20px;
+    width: 23%;
+    height: 23%;
+}
+
+/* メモ */
+.img_4{
+    margin-left: 30px;
+    width: 15%;
+    height: 15%;
+    margin-bottom: 10px;
+}
+
+.footer{
+    position : fixed;
+    bottom : 0px;
+    padding: 0.5rem 0.5rem;
+    background: #FFFFFF;
+    border-top: solid 2px;    
+    border-top-color: black;
+    text-align: center;
+   
+}
+
+.footer-area{
+    margin: 33% 0 0 0;
+}
+
+/* アレルギーの選択押下 */
+.select_a {
+    color: #fff;
+    background-color: #65af42;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius:10px;
+    font-size: 15px;
+    margin: 0px 20px;
+
+    
+}
+
+.select_a:hover {
+  color: #fff;
+  background: #437a29;
+}
+
+.select_i {
+    color: #fff;
+    background-color: #65af42;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius:10px;
+    font-size: 15px;
+    margin: 0px 20px;
+    line-height: 1.2;
+ 
+    
+}
+
+.select_i:hover {
+  color: #fff;
+  background: #437a29;
+}
+
+
+
+
+
+
+
+.action{
+    color: #fff;
+    background-color: #65af42;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius:10px;
+    font-size: 15px;
+    margin: 0px 20px;
+}
+
+.action:hover {
+  color: #fff;
+  background: #437a29;
+}
+
+/*フィルター最終確認スタイル*/
+.final-check{
+    text-align: center;
+}
+
+.button-2 {
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin:0 auto;
+    padding: .9em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #65af42;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button-2:hover {
+    background-color: #559f32;
+}
+
+.yseNo{
+    margin: 15vh 0 0 0;
+}
+.final-check h1{
+    margin: 18vh 30px 10px 50px;
+}
+
+
+/*フィルタースタイル*/
+.usRadio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em 2em;
+    border: none;
+}
+
+.usRadio label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.usRadio label::before,
+.usRadio label:has(:checked)::after {
+    border-radius: 3px;
+    content: '';
+}
+
+.usRadio label::before {
+    width: 18px;
+    height: 18px;
+    background-color: #e6edf3;
+}
+
+.usRadio label:has(:checked)::after {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #46ce61;
+    animation: anim-usRadio .3s linear;
+}
+
+@keyframes anim-usRadio {
+    0% {
+        box-shadow: 0 0 0 1px transparent;
+    }
+    50% {
+        box-shadow: 0 0 0 10px #46ce6133;
+    }
+    100% {
+        box-shadow: 0 0 0 10px transparent;
+    }
+}
+
+.usRadio input {
+    display: none;
+}
+
+.checkbox-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em 2em;
+    border: none;
+}
+
+.checkbox-2 label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-2 label::before {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 2px solid #d6dde3;
+    content: '';
+}
+
+.checkbox-2 label:has(:checked)::after {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    transform: rotate(45deg);
+    width: 5px;
+    height: 10px;
+    border: solid #2589d0;
+    border-width: 0 3px 3px 0;
+    content: '';
+}
+
+.checkbox-2 input {
+    display: none;
+}
+/*トグル*/
+.show{
+    display : block;
+}
+.none{
+    display: none;
+}
+
+.filter-content-style{
+    padding: 0;
+    margin: 0 5%;
+}
+.select_i .select_a{
+    margin: 1% 0;
+}
+.material-content-style{
+    padding: 0;
+    margin: 0 5%;
+}
+
+/*既存物選択スタイル*/
+.checkbox-1 label input[type="checkbox"]::after{
+    background-color: #3f9751;
+    
+}
+.a{
+    width: 4vh;
+    padding: 9px 0;
+}
+.cooking-detail{
+    margin: 0 0 0 5vh;
+}
+/*背景*/
+html{
+    margin: 0;
+    background-image: url("./../images/PBLbackgroundpng.png");
+    background-size: 100%;
+    
+}
+
+/*successスタイル*/
+.success{
+    margin: 15vh 0 0 0;
+    text-align: center;
+    align-items: center;
+}
+.success p{
+    margin: 5vh 0;
+}
+
+.button-3 {
+    justify-content: center;
+    align-items: center;
+    width: 112px;
+    margin:0 auto;
+    padding: .7em 2em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 25%), 0 2px 3px -2px rgb(0 0 0 / 15%);
+    background-color: #5cc163;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button-3:hover {
+    background-color: #4cb153;
+}
+p{
+    margin:9px;
+}
+h3{
+    margin: 9px;
+}

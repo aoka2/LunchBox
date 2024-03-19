@@ -2,28 +2,79 @@
 
 /*全ページ適応*/
 
+.header{
+padding: 2rem 2rem;
+    background: #65af42;
+}
+
+.footer{
+    padding: 0.5rem 0.5rem;
+    background: #FFFFFF;
+    border-top: solid 2px;    
+    border-top-color: black;
+    text-align: center;
+}
+
 body{
+    background-color: #F0F6F1;
+    margin: 0px;
 	text-align: center;
+    width : 100%;
+    height: 100%;
 }
 
-/*home.html*/
-.buttonsize{
-    width: 300px; /*幅*/
-    padding: 10px;  /*ボタン内のコンテンツとボタンの境界(枠)との間の余白*/
-    box-sizing: border-box; /*ボーダーとパディングが要素の幅や高さに含まれるようにボックスモデル*/
-    border: 1px solid #68779a;
-    background: #cbe8fa;
-    cursor: pointer;
+.logo{
+    font-size: 50px;
+    font-family: 'Comic Sans MS',sans-serif;
+    margin: 20px 0px;
 }
 
-.option{
-    width: 300px;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
-    border: 1px solid #68779a;
-    background: #cbe8fa;
-    cursor: pointer;
+/* .button_1{
+    margin-top: 20px;
+    margin-bottom: 10px;
+} */
+
+.footer_image{
+    vertical-align: bottom;
+    width : 100%;
+    margin-bottom : 0px;
+}
+
+/* お気に入り */
+.img_1{
+    width: 18%;
+    height: 18%;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+/* 作成 */
+.img_2{
+    width: 50%;
+    height: 50%;
+}
+
+/* 履歴 */
+.img_3{
+    margin-left: 20px;
+    width: 23%;
+    height: 23%;
+}
+
+/* メモ */
+.img_4{
+    margin-left: 30px;
+    width: 15%;
+    height: 15%;
+    margin-bottom: 10px;
+}
+
+.format_1{
+    margin-right: 20px;
+}
+
+.title_logo{
+    text-decoration: none;/*titleの下線消去*/
 }
 
 
@@ -49,6 +100,10 @@ text-decoration: none;
 .checkbox{
 	border-bottom: 1px solid #333;
     padding: 1px; /*バーの幅*/
+}
+
+.box-image{
+    margin :  20px 0 -47px 0;
 }
 
 input:checked~span{

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/ncmb.min.js"></script>
+    <link rel="stylesheet" href="css/display.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <title>LunchBoxChecker</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body>
+    <header class="header" style="text-align: left;">
+            <a href="index.html"
+                ><img src="images/homeicon.png" class="homeicon"
+            /></a>
+        </header>
+    <script>
+        // 値を受け取る
+        const urlParams = new URLSearchParams(window.location.search);
+        const food = urlParams.get('food');
+        const reference = urlParams.get('reference');
+        $('body').append(`<h2>${food}</h2>`);
+        $('body').append(`<h3>材料</h3>`);
+        
+
+        //APIキー
+        var applicationKey = "5b860744c00c138eecdcd0c0cd388247850c31abeac7efbd8e259ae1c14c0450";
+        var clientKey = "c071bad9b72a08d21b4aa7b51686065a2d85c0fe4f7b458b201be32bea8bdb81";
+        var ncmb = new NCMB(applicationKey, clientKey);
+        var foodDB = ncmb.DataStore(reference);
+        $('body').append(`<h2 style="border-buttom:solid;"onclick="link()">レシピ</h2>`);
+        foodDB.equalTo("food_name", food).
+        fetchAll().then(function (obj) {
+            if(obj[0].material != null){
+                for(let i = 0; i < obj[0].material.length;i++){
+                    $('body').append(`<p>${obj[0].material[i]}</p>`);
+                }
+            }else{
+                $('body').append(`<p>この食品は冷凍食品です</p>`);
+            }
+            $('body').append(`<button style="margin: 10px;" class="button-3" onclick="location.href='favorite.html'">戻る</button>`);
+        });
+        function link(){
+            window.open(`https://www.google.com/search?q=${food}`);
+        }
+    </script>
+        
+    <!-- TODO: Please edit here -->
+</body>
+<style>
+    html{
+    margin: 0;
+    background-image: url("./../images/PBLbackgroundpng.png");
+    background-size: 100%;
+
+}
+</style>
+</html>

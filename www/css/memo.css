@@ -1,0 +1,138 @@
+
+body{
+    /* background-color: #F0F6F1; */
+    margin: 0px;
+	
+}
+.header{
+    padding: 0.5rem 0.5rem;
+    background: #65af42;    
+}
+
+.wrapper{
+    margin: 1.5rem 1.5rem;
+}
+.footer{
+    position : fixed;
+    bottom : 0px;
+    padding: 0.5rem 0.5rem;
+    background: #FFFFFF;
+    border-top: solid 2px;    
+    border-top-color: black;
+    text-align: center;
+}
+
+.title_logo{
+    text-decoration: none;/*titleの下線消去*/
+}
+
+.buttun{
+    text-align: center;
+    margin: 30px;
+}
+
+
+/* 記録ボタン押下 */
+.record {
+    color: #fff;
+    background-color: #65af42;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius:10px;
+    font-size: 25px;
+}
+
+.record:hover {
+  color: #fff;
+  background: #437a29;
+}
+
+h1{
+    margin: 10px 60px;
+} 
+
+/*memo.html*/
+.box{
+margin:  auto; /*箱と他の行との幅*/
+display: table;
+}
+
+.check{
+	margin: 10px auto 15px auto;
+}
+
+.checkbox{
+	border-bottom: 1px solid #333;
+    padding: 1px; /*バーの幅*/
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+  margin: 0 6px 0 0;
+}
+
+input:checked~span{
+text-decoration: line-through;  /*打ち消し線の実装*/
+}
+
+
+/*下線の点線*/
+.todo-label{
+	display: inline-block;
+	position: relative;
+	border-bottom: 2px #666666 dashed;
+    padding: 10px;
+	width:100%;
+    font-size: 20px;
+   
+  }
+
+  
+
+
+/*ホーム*/
+.homeicon{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 18%;
+    height: 18%;
+}
+
+/* お気に入り */
+.img_1{
+    width: 18%;
+    height: 18%;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+/* 作成 */
+.img_2{
+    width: 50%;
+    height: 50%;
+}
+
+/* 履歴 */
+.img_3{
+    margin-left: 20px;
+    width: 23%;
+    height: 23%;
+}
+
+/* メモ */
+.img_4{
+    margin-left: 30px;
+    width: 15%;
+    height: 15%;
+    margin-bottom: 10px;
+}
+/*背景*/
+html{
+    margin: 0;
+    background-image: url("./../images/PBLbackgroundpng.png");
+    background-size: 100%;
+}

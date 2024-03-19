@@ -25,6 +25,35 @@ height: 100%;*/
     height: 18%;
 }
 
+/* お気に入り */
+.img_1{
+    width: 18%;
+    height: 18%;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+/* 作成 */
+.img_2{
+    width: 50%;
+    height: 50%;
+}
+
+/* 履歴 */
+.img_3{
+    margin-left: 20px;
+    width: 23%;
+    height: 23%;
+}
+
+/* メモ */
+.img_4{
+    margin-left: 30px;
+    width: 15%;
+    height: 15%;
+    margin-bottom: 10px;
+}
+
 /*.footer{
     padding: 0.5rem 0.5rem;
     background: #FFFFFF;
@@ -34,17 +63,20 @@ height: 100%;*/
 }*/
 
 
-.footer_image{
+.footer{
     width : 100%;
     padding: 0 0 0 0;
-    margin: -26vh 0 0 0;
-    position: absolute;
+    margin-bottom : 0px;
+    position : fixed;
     z-index: -1;
 }
 
+.footer_image{
+    width : 100%;
+    height: 100%;
+}
 
 
-/* 
 .popup {
   width: 100vw;
   height: 100vh;
@@ -81,7 +113,7 @@ height: 100%;*/
   text-decoration: none;
   font-size: 5rem;
   line-height: 1rem;
-} */
+}
 
 
 
@@ -158,22 +190,11 @@ input[name="tab_item"] {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
-.box3{
-  /*スクロールバー*/
-  width: 90%;
-  height: 100px;
-  overflow: auto;
-  margin-bottom : 20px;
-  padding: 0.5em 1em;
-  color: #5d627b;
-  background: white;
-  border: solid 1px #5d627b;
-}
 
 .box6{
   /*スクロールバー*/
   width: 80%;
-  height: 56vh;
+  height: 100px;
   overflow: auto;
 
   padding: 0.5em 1em;
@@ -202,7 +223,15 @@ input[name="tab_item"] {
 	.cancel{
 	  display: none;
 	}
+
+    
 /*背景*/
+html{
+    margin: 0;
+    background-image: url("./../images/PBLbackgroundpng.png");
+    background-size: 100%;
+}
+
 .modal-span {
 cursor: pointer;
 text-decoration: underline; 
@@ -258,4 +287,5 @@ cursor: pointer;
 .bold {
   font-weight: bold; 
 }
+
 /*必要素材一覧チェックボックススタイル*/
